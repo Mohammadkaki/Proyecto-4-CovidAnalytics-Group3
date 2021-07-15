@@ -1,3 +1,6 @@
+Back Log link :  https://docs.google.com/document/d/1gs08N3Kzi3MrNWFmMBtIlkBy9ex-xwW27cdnZcBqzH0/edit?usp=sharing
+
+
 ### Contexto
 
 En la actualidad existen muchos bancos de datos que registran eventos mundiales, ya sean tendencias en moda, redes sociales o incluso pandemias. El acceso a estos datos es importante para realizar estudios de crecimiento, propagación o cualquier análisis estadístico. Estos análisis suelen venir acompañados con gráficas estadísticas que representan la información tratada.
