@@ -2,8 +2,9 @@
 
 
 namespace App\Http\Controllers;
-use APP\Models\Region;
+
 use Illuminate\Http\Request;
+use App\Models\Region;
 
 class AnalyticsController extends Controller
 {
