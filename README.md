@@ -84,3 +84,6 @@ Cómo este proyecto no trata de HTML y esto puede consumir tiempo, os facilito [
 Si has realizado todo lo demás os ofrezco un extra, hay una página para mapas con dos mapas básicos de google maps. Podeis geolocalizar los paises en funcion de su geoId y mostrar algunos datos escogidos en un marcador.
 
 Combinando Chars y Mapas puede hacerse una web bastante interesante.
+
+
+## Test Git Clone
