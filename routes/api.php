@@ -20,6 +20,10 @@ use App\Models\Region;
 
 Route::get('/Region' , [AnalyticsController::class, 'index']);
 
+Route::get('/Entrie' , [AnalyticsController::class, 'index2']);
+
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
