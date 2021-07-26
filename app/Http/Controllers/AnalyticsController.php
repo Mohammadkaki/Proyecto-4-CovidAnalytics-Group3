@@ -2,7 +2,8 @@
 
 
 namespace App\Http\Controllers;
-use APP\Models\Region;
+use App\Models\Region;
+use App\Models\Entrie;
 use Illuminate\Http\Request;
 
 class AnalyticsController extends Controller

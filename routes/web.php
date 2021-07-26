@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Region;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    //return Region::all();  //esta para ver si la dataBase esta conectado con larval.
 });
