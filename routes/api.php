@@ -18,9 +18,9 @@ use App\Models\Region;
 |
 */
 
-Route::get('/Region' , [AnalyticsController::class, 'index']);
+Route::get('/Region' , [AnalyticsController::class, 'getRegion']);
 
-Route::get('/Entrie' , [AnalyticsController::class, 'index2']);
+Route::get('/Entrie/{date}' , [AnalyticsController::class, 'getEntrie']);
 
 
 

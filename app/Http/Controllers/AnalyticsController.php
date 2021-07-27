@@ -9,18 +9,41 @@ use App\Models\Entrie;
 
 class AnalyticsController extends Controller
 {
-    public function index(){
+    public function getRegion() {
      
-return Region::all();
-
+        return Region::all();
     }
 
 
-    public function index2(){
+    // public function getEntrie(){
      
-        return Entrie::all();
+    //     return Entrie::with('country')->paginate(5);
         
-            }
+    // }
 
+//Listar los datos de cada pais buscando por días.
 
+    public function getEntrie($date){
+
+        $fechaArray = explode('-',$date);
+     
+        return Entrie::with('country')->where('day', '=', $fechaArray[0])
+                        ->where('month', '=', $fechaArray[1])
+                        ->where('year', '=', $fechaArray[2])
+                        ->get();
+   
+    }
+
+    //Listar datos de un país concreto buscando por días.
+    
+    // public function getEntrie($date){
+
+    //     $fechaArray = explode('-',$date);
+     
+    //     return Entrie::where('day', '=', $fechaArray[0])
+    //                     ->where('month', '=', $fechaArray[1])
+    //                     ->where('year', '=', $fechaArray[2])
+    //                     ->get();
+   
+    // }
 }
