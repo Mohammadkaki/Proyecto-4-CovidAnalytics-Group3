@@ -19,11 +19,16 @@ use App\Models\Region;
 */
 
 Route::get('/Region' , [AnalyticsController::class, 'getRegion']);
+Route::get('/Entrie/{country_id}' , [AnalyticsController::class, 'getEntrie']);
 
-Route::get('/Entrie/{date}' , [AnalyticsController::class, 'getEntrie']);
+
+Route::get('/Countrie/date{Countrie,date}' , [AnalyticsController::class, 'getEntrie_Fecha_Pais']);
 
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+
+
+    
 });
