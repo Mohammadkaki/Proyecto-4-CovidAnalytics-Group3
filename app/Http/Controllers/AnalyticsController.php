@@ -10,33 +10,10 @@ use App\Models\Countrie;
 
 class AnalyticsController extends Controller
 {
-    public function getCountries(){
-        $countries = countries::all();
-        return ['$countries' => $countries];
-    }
-
-    public function getEntries(){
-        $entries = entries::all();
-        return ['$entries' => $entries];
-    }
-
-    public function getRegions(){
-        $regions = Regions::all();
-        return ['$regions' => $regions];
-    }
-    // // public function getRegion() {
-     
-    // //     return Region::all();
-    // }
+    
 
 
-    // // public function getEntrie(){
-     
-    // //     return Entrie::with('country')->paginate(5);
-        
-    // // }
-
-//Listar los datos de cada pais buscando por días.
+//#1-Listar los datos de cada pais buscando por días.
 
     // public function getEntrie($date){
 
@@ -49,25 +26,50 @@ class AnalyticsController extends Controller
    
     // }
 
-    //Listar un país concreto con el sumatorio de los datos
-    public function getEntrie($country_id){
 
-       // $fechaArray = explode('-',$date);
+    //#2-Listar datos de un país concreto buscando por días.
      
-        return Entrie::with('country')->where('country_id', '=', $country_id)->get();
+//  public function getEntrie($country_id, $date){
+
+//        $fechaArray = explode('-',$date);
+     
+//         return Entrie::with('country')->where('country_id', '=', $country_id)
+//         ->where('day', '=', $fechaArray[0])
+//         ->where('month', '=', $fechaArray[1])
+//         ->where('year', '=', $fechaArray[2])
+//         ->get();
+   
+//     }
+
+
+// #3 - Listar todos los paises con el sumatorio de los datos. (cases , death ,A_N_F_14_days_of_COVID )
+
+   public function getEntrie(){
+
+    // $UI = Entrie::with('country')->get();
+    
+    $categorias = Entrie::with('country')->select('')->sum('cases');
+
+
+
+      echo "cases ",': ' , $categorias;
    
     }
 
 
 
-    
-////
+    //#4-Listar un país concreto con el sumatorio de los datos
+    // public function getEntrie($country_id){
 
-// public function getSingleRegion($id, $nombre){
-//     $region = Region::where('id', '=', $id)
-//                     ->where('continentExp', '=', $nombre)->get();
-//     return ['$region' => $region];
-// }
+         
+    //     return Entrie::with('country')->where('country_id', '=', $country_id)->get();
+   
+    // }
+
+
+
+    
+
 
 }
 
