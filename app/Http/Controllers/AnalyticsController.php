@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Region;
 use App\Models\Entrie;
-use App\Models\Countrie;
+
 
 
 class AnalyticsController extends Controller
@@ -67,13 +67,13 @@ class AnalyticsController extends Controller
     //#4-Listar un país concreto con el sumatorio de los datos
     public function getEntrie4($countriesAndTerritories)
     {   
-        $paistotal= DB::table('entries')
+        $porpais= DB::table('entries')
         ->Join('countries','countries.id','=','entries.country_id')
         ->select('entries.country_id','countries.countriesAndTerritories',DB::raw('SUM(entries.cases) AS cases'),DB::raw('SUM(entries.deaths) AS deaths'))
         ->groupBy('entries.country_id')
-        ->Where ('countriesAndTerritories', '=', $countriesAndTerritories)
+        ->Where('countriesAndTerritories', '=', $countriesAndTerritories)
         ->get();      
-        return  ['suma' =>$paistotal];
+        return  ['suma' =>$porpais];
        
   
     }
