@@ -23,9 +23,10 @@ Route::get('/Region/{id}' , [AnalyticsController::class, 'getRegion2']);
 
 
 Route::get('/Entrie' , [AnalyticsController::class, 'getEntrie1']);
-Route::get('/Entrie/date/{date}' , [AnalyticsController::class, 'getEntrie2']);
-Route::get('/Entrie/{country_id}/{date}' , [AnalyticsController::class, 'getEntrie3']);
 Route::get('/Entrie/pais/{countriesAndTerritories}' , [AnalyticsController::class, 'getEntrie4']);
+Route::get('/Entrie/date/{date}' , [AnalyticsController::class, 'getEntrie2']);
+Route::get('/Entrie/countryid/{country_id}/{date}' , [AnalyticsController::class, 'getEntrie3']);
+
 
 
 
