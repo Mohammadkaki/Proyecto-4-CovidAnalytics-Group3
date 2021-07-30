@@ -1,7 +1,14 @@
+Group memeber:
+
+1-Mohammad Ibrahim kaki
+2-Roberto Carlos
+3-Maria Urbana
+4-Pablo
+--------------------
 Back Log link :  https://docs.google.com/document/d/1gs08N3Kzi3MrNWFmMBtIlkBy9ex-xwW27cdnZcBqzH0/edit?usp=sharing
-
+-------------------
 Trello : https://trello.com/b/Ojf2oySf/covidanalytics-grupo3
-
+------------------------
 
 ### Contexto
 
