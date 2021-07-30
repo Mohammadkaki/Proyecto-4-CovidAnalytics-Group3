@@ -5,13 +5,14 @@ Group memeber:
    <li>Maria Urbana</li>
     <li>Pablo</li>
     </ol>
------------------------------------------------------------------------------------------------------------------------------------
-Project Link chart : https://mohammadkaki.github.io/proyecto-4-CovidAnalytics-Group3/pages/charts/chartjs.html
------------------------------------------------------------------------------------------------------------------------------------------
-Back Log link :  https://docs.google.com/document/d/1gs08N3Kzi3MrNWFmMBtIlkBy9ex-xwW27cdnZcBqzH0/edit?usp=sharing
--------------------------------------------------------------------------------------------------------------------------------
-Trello : https://trello.com/b/Ojf2oySf/covidanalytics-grupo3
---------------------------------------------------------------------------------------------------------------------------------
+
+<p> Project Link chart : https://mohammadkaki.github.io/proyecto-4-CovidAnalytics-Group3/pages/charts/chartjs.html </p>
+
+<p> Back Log link :  https://docs.google.com/document/d/1gs08N3Kzi3MrNWFmMBtIlkBy9ex-xwW27cdnZcBqzH0/edit?usp=sharing <p>
+
+<p> Trello : https://trello.com/invite/b/Ojf2oySf/86183819f8c90d2c2fc7226007de2f9d/covidanalytics-grupo3 <p>
+
+
 
 ### Contexto
 
