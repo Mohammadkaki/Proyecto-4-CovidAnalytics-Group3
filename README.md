@@ -1,11 +1,10 @@
 Group memeber:
-<ul>
-    <li>1-Mohammad Ibrahim kaki</li>
-1-Mohammad Ibrahim kaki
-2-Roberto Carlos
-3-Maria Urbana
-4-Pablo
-    </ul>
+   <ol>
+    <li>Mohammad Ibrahim kaki</li>
+    <li>Roberto Carlo</li>
+   <li>Maria Urbana</li>
+    <li>Pablo</li>
+    </ol>
 --------------------
 Back Log link :  https://docs.google.com/document/d/1gs08N3Kzi3MrNWFmMBtIlkBy9ex-xwW27cdnZcBqzH0/edit?usp=sharing
 -------------------
