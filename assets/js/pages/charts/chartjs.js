@@ -153,15 +153,24 @@ function getEntriecountryidChart(data) {
 
 
 // #2-Listar datos de un país concreto buscando por días.
-async function getEntriesBycountryid(countryid, date) {
+async function getEntriesBycountryid() {
 
-    await apiCall('GET', hostName + '/api/Entrie/countryid/' + countryid + '/' + date, null, null)
+    let key2 = '/api/Entrie/countryid/';
+    let input2 = document.getElementById('number');
+    let input22 = document.getElementById('date2');
+    let button2 = document.getElementById('Sumbit2');
+    button2.addEventListener('click', run2);
+
+
+  function run2 () { 
+     apiCall('GET', hostName + key2 + input2.value + '/' + input22.value.split("-").reverse().join("-"), null, null)
         .then(respuesta => {
             new Chart(document.getElementById("bar_chart").getContext("2d"), getEntriecountryidChart(respuesta));
         });
+    }
 };
 
-getEntriesBycountryid('1', '19-05-2020');
+getEntriesBycountryid();
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
