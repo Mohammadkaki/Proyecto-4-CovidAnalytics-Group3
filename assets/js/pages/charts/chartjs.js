@@ -81,15 +81,26 @@ const apiCall = async (method, url, token = null, data = null) => {
 
 
 // #1-Listar todos los paises buscando por días.
-async function getEntriesByDate(fecha) {
+async function getEntriesByDate() {
+    let key1 = '/api/Entrie/date/';
+    let input1 = document.getElementById('date');
+    let button1 = document.getElementById('Sumbit1');
+    button1.addEventListener('click', run1);
 
-    await apiCall('GET', hostName + '/api/Entrie/date/' + fecha, null, null)
+  function run1() { 
+
+    if ( input1 == ''  ) {
+        alert ('Insert la date para ver la datos');
+    }
+ apiCall('GET', hostName + key1 + input1.value.split("-").reverse().join("-"), null, null)
         .then(respuesta => {
             new Chart(document.getElementById("line_chart").getContext("2d"), getEntrieByDateChart(respuesta));
         });
+
+    }
 };
 
-getEntriesByDate('19-05-2020');
+getEntriesByDate();
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -171,26 +182,45 @@ function Sum_todos_paises(data) {
     }
 
     config = {
-        type: 'bar',
+        type: 'radar',
         data: {
             labels: labels,
-            datasets: [{
+            datasets: [
+                
+                {
+
                 label: "Casos",
                 data: casos,
-                borderColor: 'rgba(0, 188, 212, 0.75)',
-                backgroundColor: 'rgba(0, 188, 212, 0.3)',
-                pointBorderColor: 'rgba(0, 188, 212, 0)',
-                pointBackgroundColor: 'rgba(0, 188, 212, 0.9)',
-                pointBorderWidth: 1
-            }, {
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(255, 99, 132)'
+            }, 
+            
+            
+            
+            {
                 label: "deaths",
                 data: deaths,
-                borderColor: 'rgba(233, 30, 99, 0.75)',
-                backgroundColor: 'rgba(233, 30, 99, 0.3)',
-                pointBorderColor: 'rgba(233, 30, 99, 0)',
-                pointBackgroundColor: 'rgba(233, 30, 99, 0.9)',
-                pointBorderWidth: 1
-            }]
+                fill: true,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
+            }
+
+            
+        
+       
+       
+       
+        ]
+
         },
         options: {
             responsive: true,
@@ -235,8 +265,9 @@ function Sum_pais(data) {
 
 
     config = {
-        type: 'bar',
+        type: 'pie',
         data: {
+            
             labels: labels,
             datasets: [{
                 label: "Casos",
@@ -266,26 +297,33 @@ function Sum_pais(data) {
 
 }
 
-
-// let pais;
-// function fin() {
-
-//     pais = document.getElementById('text').value;
-// }
-// fin()
-// console.log(pais);
-
 //#4-Listar un país concreto con el sumatorio de los datos
-async function Sum(pais) {
+async function Sum() {
+    let key4 = '/api/Entrie/pais/';
+    let input4 = document.getElementById('pais');
+    let button4 = document.getElementById('Sumbit4');
+    button4.addEventListener('click', run4);
 
-    await apiCall('GET', hostName + '/api/Entrie/pais/' + pais, null, null)
-        .then(respuesta => {
-            new Chart(document.getElementById("pie_chart").getContext("2d"), Sum_pais(respuesta));
-        });
+    function run4() {
 
+        if( input4.value == '') {
+         alert ('Insert a pais para ver la datas');
+        }
+        else { 
+            
+        apiCall('GET', hostName + key4 + input4.value, null, null)
+            .then(respuesta => {
+                new Chart(document.getElementById("pie_chart").getContext("2d"), Sum_pais(respuesta));
+            });
+            
+        }
+        
+    }
 
 };
 
-Sum("Mali");
+Sum();
+
+
 
 

@@ -49,6 +49,9 @@ class AnalyticsController extends Controller
             ->get();
     }
 
+  
+
+    
 
 
     //#3 Listar todos los paises con el sumatorio de los datos.
@@ -77,4 +80,5 @@ class AnalyticsController extends Controller
        
   
     }
+
 }
