@@ -81,6 +81,26 @@ const apiCall = async (method, url, token = null, data = null) => {
 
 
 // #1-Listar todos los paises buscando por días.
+async function default1(fechas) {
+    let key1 = '/api/Entrie/date/';
+    let input1 = document.getElementById('date');
+    let button1 = document.getElementById('Sumbit1');
+    //button1.addEventListener('click', run1);
+
+ 
+ apiCall('GET', hostName + key1 + fechas, null, null)
+        .then(respuesta => {
+            new Chart(document.getElementById("line_chart").getContext("2d"), getEntrieByDateChart(respuesta));
+        });
+
+    
+};
+
+default1("19-04-2020");
+
+
+
+
 async function getEntriesByDate() {
     let key1 = '/api/Entrie/date/';
     let input1 = document.getElementById('date');
@@ -153,6 +173,26 @@ function getEntriecountryidChart(data) {
 
 
 // #2-Listar datos de un país concreto buscando por días.
+async function default2(CID, fechas) {
+
+    let key2 = '/api/Entrie/countryid/';
+    let input2 = document.getElementById('number');
+    let input22 = document.getElementById('date2');
+    let button2 = document.getElementById('Sumbit2');
+   // button2.addEventListener('click', run2);
+
+     apiCall('GET', hostName + key2 + CID + '/' + fechas, null, null)
+        .then(respuesta => {
+            new Chart(document.getElementById("bar_chart").getContext("2d"), getEntriecountryidChart(respuesta));
+        });
+    
+};
+
+default2(1, '19-10-2020');
+
+
+
+
 async function getEntriesBycountryid() {
 
     let key2 = '/api/Entrie/countryid/';
@@ -265,11 +305,11 @@ function Sum_pais(data) {
     let labels = [];
     let casos = [];
     let deaths = [];
-    let entrie = null;
+    //let entrie = null;
 
     entrie = data.suma[0];
-    labels.push(entrie.countriesAndTerritories);
     casos.push(entrie.cases);
+    labels.push(entrie.countriesAndTerritories);
     deaths.push(entrie.deaths);
 
 
@@ -279,7 +319,7 @@ function Sum_pais(data) {
             
             labels: labels,
             datasets: [{
-                label: "Casos",
+                label: "casos",
                 data: casos,
                 borderColor: 'rgba(0, 188, 212, 0.75)',
                 backgroundColor: 'rgba(0, 188, 212, 0.3)',
@@ -307,6 +347,26 @@ function Sum_pais(data) {
 }
 
 //#4-Listar un país concreto con el sumatorio de los datos
+
+
+ async function default4 (pais) {
+    let key4 = '/api/Entrie/pais/';
+    let input4 = document.getElementById('pais');
+    let button4 = document.getElementById('Sumbit4');
+   // button4.addEventListener('click', run44);
+
+
+             apiCall('GET', hostName + key4 + pais, null, null)
+            .then(respuesta => {
+                new Chart(document.getElementById("pie_chart").getContext("2d"), Sum_pais(respuesta));
+            });
+                    
+        
+    }
+
+    default4 ('Mali');
+
+
 async function Sum() {
     let key4 = '/api/Entrie/pais/';
     let input4 = document.getElementById('pais');
@@ -315,6 +375,8 @@ async function Sum() {
 
     function run4() {
 
+        
+        
         if( input4.value == '') {
          alert ('Insert a pais para ver la datas');
         }
